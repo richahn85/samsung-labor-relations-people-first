@@ -379,6 +379,34 @@
 
     .final-answer h2 { color: #fff; }
 
+    .answer-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .answer-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(160px, 0.75fr);
+      gap: 16px;
+      align-items: center;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .answer-row span:first-child {
+      color: #f2f7fa;
+      font-weight: 850;
+    }
+
+    .answer-row span:last-child {
+      color: #a7f3d0;
+      font-weight: 950;
+      text-align: right;
+      white-space: nowrap;
+    }
+
     .final-answer table {
       min-width: 680px;
       margin-top: 18px;
@@ -438,6 +466,13 @@
       .section-title { display: block; }
       .note { margin-top: 8px; }
       table { min-width: 680px; }
+      .answer-row {
+        grid-template-columns: 1fr;
+      }
+
+      .answer-row span:last-child {
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -868,19 +903,12 @@
 
     <section class="final-answer">
       <h2>최종 정답 정리</h2>
-      <div class="table-shell">
-        <table>
-          <thead>
-            <tr><th>구분</th><th class="number">정답</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>2027년 가중평균자본비용액</td><td class="number">3,700만 원</td></tr>
-            <tr><td>2027년 가중평균자본비용률</td><td class="number">12.33%</td></tr>
-            <tr><td>2027년 EVA</td><td class="number">9,332만 원</td></tr>
-            <tr><td>2027년 EVA율</td><td class="number">31.11%</td></tr>
-            <tr><td>2026년 대비 EVA 증가액</td><td class="number">9,126만 원</td></tr>
-          </tbody>
-        </table>
+      <div class="answer-list" aria-label="최종 정답">
+        <div class="answer-row"><span>2027년 가중평균자본비용액</span><span>3,700만 원</span></div>
+        <div class="answer-row"><span>2027년 가중평균자본비용률</span><span>12.33%</span></div>
+        <div class="answer-row"><span>2027년 EVA</span><span>9,332만 원</span></div>
+        <div class="answer-row"><span>2027년 EVA율</span><span>31.11%</span></div>
+        <div class="answer-row"><span>2026년 대비 EVA 증가액</span><span>9,126만 원</span></div>
       </div>
       <p class="closing" style="margin-top:24px">사람이 죽도록 고생했는데도 남는 것이 없다면, 문제는 노력이 부족한 것이 아니라 가치가 만들어지는 구조를 보지 못한 데 있습니다. EVA는 그 구조를 보게 해주는 경영의 거울입니다.</p>
       <div class="calc-card" style="margin-top:18px; background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.18); box-shadow:none">
